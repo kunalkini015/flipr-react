@@ -1,0 +1,228 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/* common */
+
+#app , body{
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.row-top-margin{
+    margin-top: 2vh;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.ant-btn-primary{
+    background-color: #132ecc;
+    border-color: #132ecc;
+}
+
+/* Home */
+.home-page-container{
+    margin: 35vh 30vw;
+    overflow-y: hidden;
+}
+
+.home-page-row{
+    margin-top: 2vh;
+}
+
+.home-page-btn{
+    width: 18vw;
+    height: 7vh;
+    margin-left: 1vw;
+}
+
+.forgot-password-text{
+    text-decoration: underline;
+    color: #1890ff;
+    margin-left: 13.5vw;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Topbar */
+.header{
+    
+    height: 10vh;
+    background: white;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 5vw;
+    word-spacing: 0;
+    justify-content: center;
+    
+}
+
+.header-logo{
+    color: #132ecc;
+    font-size: 30px;
+    float: left;
+    font-family:  'Montserrat', sans-serif;
+    font-weight: bolder;
+    transform: rotate(-5deg);
+    text-decoration: overline;
+}
+.logout-btn{
+    margin-top: 2vh;
+    margin-right: 6vw;
+}
+
+/* Bottombar */
+.footer{
+    height: 10vh;
+    padding: 2vh 5vw;
+}
+
+.footer-logo{
+    color: #132ecc;
+    font-family:  'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+/* Main */
+.main-container{
+    overflow: auto;
+    height: 70vh;
+    margin: 5vh 5vw;
+
+}
+.board-container{
+    min-height: 15vh;
+    background: #e7e7e7;
+    border-radius: 10px;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 4vh 3vw;
+}
+
+.create-board-container{
+    min-height: 15vh;
+     background: repeating-linear-gradient(
+        45deg,
+        white,
+        #e8e8e8 10px,
+        #d2eeee 15px,
+        #e8e8e8 20px
+      );
+    border-radius: 10px;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 4vh 2vw;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.create-board-container-heading{
+    font-weight: bolder;
+}
+
+
+.board-container:hover{
+    background: rgb(179, 176, 176);
+}
+.board-heading{
+    color: #132ecc;
+    font-family:  'Montserrat', sans-serif;
+}
+
+.vertical-line{
+    border-left: 3px solid #e8e8ee;
+    height: 70vh;
+}
+
+/* PersonalBoard */
+
+.board-name{
+    display: inline-block;
+    margin-left: 5vw;
+    color: #132ecc;
+    font-family:  'Montserrat', sans-serif;
+}
+.board-back-icon{
+    font-size: 25px;
+    margin-top: 2vh;
+    float: right;
+    color: #132ecc;
+}
+
+.list-container{
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 2vh 1vw;
+    }
+/* width */
+.list-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .list-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .list-container::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .list-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+.list{
+    overflow: auto  ;
+    height: 50vh;
+    width: 28vw;
+    margin: 0 1vw;
+    display: inline-block;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 1vh;
+}
+
+.add-new-list-btn{
+    margin-top: 2vh;
+    margin-right: 1vw;
+}
+
+
+
+/* List */
+.create-new-card-btn{
+    margin-left: 0;
+    color: rgb(41, 36, 36);
+    
+    opacity: 0.7;
+
+}
+
+/* CardItem */
+.card{
+    margin-top: 2vh;
+    border-radius: 1vh;
+}
+
+.card-edit-btn{
+    margin-right: 1vw;
+}
+.card-attach-btn{
+    margin-right: 1vw;
+}
+.card-name-in-list{
+    word-wrap: break-word
+}
