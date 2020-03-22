@@ -58,7 +58,7 @@ export default class AddAttachmentModal extends Component {
         const props = {
             name: 'file',
             // action: 'http://localhost:8000/attachment/',
-            action: 'http://flipr-django.herokuapp.com/attachment/',
+            action: 'https://flipr-django.herokuapp.com/attachment/',
             headers: {
               authorization: 'authorization-text',
             },
