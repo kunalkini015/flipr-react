@@ -50,12 +50,12 @@ body {
   margin-left: 1vw;
 }
 
-.home-page-login-btn{
-    float: right;
+.home-page-login-btn {
+  float: right;
 }
 
-.home-page-reg-btn{
-    float: left;
+.home-page-reg-btn {
+  float: left;
 }
 .home-page-logo {
   font-size: 40px;
@@ -64,7 +64,7 @@ body {
   font-weight: bolder;
   transform: rotate(-5deg);
   text-decoration: overline;
-  margin-left: 10vw ;
+  margin-left: 10vw;
 }
 
 .home-page-instruction {
@@ -159,6 +159,9 @@ body {
 .board-container:hover {
   background: rgb(179, 176, 176);
 }
+.board-heading-container{
+    text-align: center;
+}
 .board-heading {
   color: #132ecc;
   font-family: "Montserrat", sans-serif;
@@ -209,20 +212,12 @@ body {
   background: #555;
 }
 
-.list {
-  overflow: auto;
-  height: 50vh;
-  width: 28vw;
-  margin: 0 1vw;
-  display: inline-block;
-  background: #f8f8f8;
-  border-radius: 10px;
-  margin-top: 1vh;
-}
+
 
 .add-new-list-btn {
   margin-top: 2vh;
   margin-right: 1vw;
+  float: right;
 }
 
 /* List */
@@ -232,6 +227,17 @@ body {
 
   opacity: 0.7;
 }
+
+.list {
+    overflow: auto;
+    height: 50vh;
+    width: 28vw;
+    margin: 0 1vw;
+    display: inline-block;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 1vh;
+  }
 
 /* CardItem */
 .card {
@@ -250,45 +256,195 @@ body {
 }
 
 @media all and (max-width: 480px) {
-  /* Home 480px*/
-  .home-page-container {
-    margin: 0vh 0vw;
-    overflow: hidden;
-    height: 100vh;
-  }
+        /* Home 480px*/
+        .home-page-container {
+            margin: 0vh 0vw;
+            overflow: hidden;
+            height: 100vh;
+        }
 
-  .home-page-row {
-    margin-top: 2vh;
-  }
+        .home-page-row {
+            margin-top: 2vh;
+        }
 
-  .home-page-btn {
-    width: 40vw;
-    height: 5vh;
-    margin-left: 1vw;
-  }
+        .home-page-btn {
+            width: 40vw;
+            height: 5vh;
+            margin-left: 1vw;
+            border-radius: 10px;
+        }
 
-  .home-page-logo {
-    margin-top: 10vh;
-    font-size: 30px;
-    color: #132ecc;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bolder;
-    transform: rotate(-5deg);
-    text-decoration: overline;
+        .home-page-logo {
+            margin-top: 20vh;
+            font-size: 30px;
+            color: #132ecc;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bolder;
+            transform: rotate(-5deg);
+            text-decoration: overline;
+        }
 
-  }
+        .home-page-instruction {
+            text-align: justify;
+            width: 80vw;
+            margin: 0 8vw;
+        }
 
-  .home-page-instruction {
-    text-align: justify;
-    width: 80vw;
-    margin: 0 8vw;
-  }
+        .forgot-password-text {
+            text-decoration: underline;
+            color: #1890ff;
+            margin-left: 13.5vw;
+            font-size: 20px;
+            cursor: pointer;
+        }
 
-  .forgot-password-text {
-    text-decoration: underline;
-    color: #1890ff;
-    margin-left: 13.5vw;
-    font-size: 20px;
-    cursor: pointer;
-  }
+        /* Topbar */
+        .header {
+            height: 10vh;
+            background: #f0f2f5;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 0 2vw;
+            word-spacing: 0;
+            justify-content: center;
+        }
+
+        .header-logo {
+            color: #132ecc;
+            font-size: 20px;
+            float: left;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bolder;
+            transform: rotate(-5deg);
+            text-decoration: overline;
+        }
+        .logout-btn {
+            margin-top: 2vh;
+            margin-right: 6vw;
+        }
+
+        /* Bottombar */
+        .footer {
+            height: 10vh;
+        }
+        .footer-middle-text {
+            display: none;
+        }
+
+        .footer-logo {
+            color: #132ecc;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bolder;
+            transform: rotate(-5deg);
+            text-decoration: overline;
+        }
+        
+        /* Main */
+        .main-container {
+            overflow: auto;
+            height: 70vh;
+            margin: 5vh 5vw;
+        }
+        .board-container {
+            min-height: 15vh;
+            background: #e7e7e7;
+            border-radius: 10px;
+            margin: 1vh 5vw 1vh 15vw;
+            padding: 4vh 3vw;
+        }
+
+        .create-board-container {
+            min-height: 15vh;
+            background: repeating-linear-gradient(
+            45deg,
+            white,
+            #e8e8e8 10px,
+            #d2eeee 15px,
+            #e8e8e8 20px
+            );
+            border-radius: 10px;
+            margin: 1vh 5vw 1vh 15vw;
+            padding: 4vh 2vw;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .create-board-container-heading {
+            font-weight: bolder;
+        }
+
+        .board-container:hover {
+            background: rgb(179, 176, 176);
+        }
+        .board-heading {
+            color: #132ecc;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bolder;
+        }
+
+        .board-heading-container{
+            text-align: left;
+        }
+
+        .vertical-line {
+            display: none;
+        }
+        /* PersonalBoard */
+
+        .board-name {
+            display: inline-block;
+            margin-left: 1vw;
+            color: #132ecc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px;
+            margin-top: 2vh;
+            margin-bottom: 0;
+        }
+        .board-back-icon {
+            font-size: 25px;
+            margin-top: 2vh;
+            float: left;
+            color: #132ecc;
+        }
+        
+        .list-container {
+            overflow: auto;
+            white-space: nowrap;
+            margin: 2vh 1vw;
+        }
+        
+        .list {
+            overflow: auto;
+            height: 50vh;
+            width: 28vw;
+            margin: 0 1vw;
+            display: inline-block;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin-top: 1vh;
+        }
+        
+        .add-new-list-btn {
+            margin-top: 2vh;
+            margin-right: 1vw;
+            float: left;
+            border-radius: 10px;
+        }
+
+        /* List */
+        .create-new-card-btn {
+            margin-left: 0;
+            color: rgb(41, 36, 36);
+            opacity: 0.7;
+        }
+        
+        .list {
+            overflow: auto;
+            height: 50vh;
+            width: 90vw;
+            margin: 0 1vw;
+            display: block;
+            background: #f8f8f8;
+            border-radius: 10px;
+            margin-top: 1vh;
+            }
+  
 }

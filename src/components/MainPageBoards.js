@@ -89,6 +89,7 @@ export default class MainPageBoards extends Component {
       <Col
         lg={10}
         md={10}
+        xs={16}
         className="board-container"
         
       >
@@ -127,8 +128,8 @@ export default class MainPageBoards extends Component {
       <Col
         lg={10}
         md={10}
+        xs={16}
         className="board-container"
-        
       >
         <Row>
           <Col lg={12}>
@@ -166,13 +167,14 @@ export default class MainPageBoards extends Component {
       <div className="main-container">
         {this.state.selectedBoardItem === undefined ? (
           <Row>
-            <Col lg={12} style={{textAlign: "center"}} >
+            <Col lg={12} className="board-heading-container" >
               <h1 className="board-heading"> Personal Boards </h1>
               <div>
                 <Row>
                   <Col
                     lg={10}
                     md={10}
+                    xs={16}
                     className="create-board-container"
                     onClick={this.handleCreatePersonalBoardClick}
                   >
@@ -190,11 +192,11 @@ export default class MainPageBoards extends Component {
               </div>
             </Col>
             <Col lg={1} className="vertical-line"></Col>
-            <Col lg={11} style={{textAlign: "center"}}>
+            <Col lg={11} className="board-heading-container">
               <h1 className="board-heading"> Team Boards </h1>
               <div>
                 <Row>
-                  <Col lg={10} md={10} className="create-board-container"
+                  <Col lg={10} md={10} xs={16} className="create-board-container"
                     onClick={this.handleCreateTeamBoardClick}
                   >
                     <Row>

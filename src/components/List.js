@@ -79,16 +79,17 @@ export default class List extends Component {
 
     render() {
         return (
-            <Card 
+
+                <Card 
                 className="list"
                 title={this.props.item.name}
                 extra={<Button type="primary" onClick={this.handleDeleteListClick}> Delete </Button>}
                 >
                     <Row>
-                        <Col lg={14}>
+                        <Col lg={14} xs={13}>
                             <Button className="create-new-card-btn" icon = {<PlusOutlined />} onClick={this.handleCreateNewCardClick}>Add new card  </Button>
                         </Col>
-                        <Col lg={10}>
+                        <Col lg={10} xs={11}>
                             <Checkbox checked={this.state.showArchieved} onClick={this.handleArchiveClick}> Show Archieved</Checkbox>
                         </Col>
                     </Row>

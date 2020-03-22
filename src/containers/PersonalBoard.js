@@ -64,18 +64,18 @@ export default class PersonalBoard extends Component {
             return (
                 <div >
                     <Row>
-                        <Col lg={1}>
+                        <Col lg={1} xs={2}>
                             <Tooltip title="Go back">
                                 <ArrowLeftOutlined onClick={this.handleBackIconClick} className="board-back-icon" theme="outlined" />
                             </Tooltip>
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={6} xs={2}>
                         </Col>
-                        <Col lg={11}>
-                            <h1  className="board-name"> Welcome to {this.props.boardItem.name} board.</h1>
+                        <Col lg={11} xs={20}>
+                            <h1  className="board-name"> Welcome to {this.props.boardItem.name} board</h1>
                         </Col>
                         <Col lg={6}>
-                            <Button  type="primary" className="add-new-list-btn float-right"
+                            <Button  type="primary" className="add-new-list-btn"
                                     onClick={this.handleNewListClick}
                                     > Click here to add a new list </Button>
 

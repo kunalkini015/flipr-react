@@ -23,6 +23,7 @@ export default class CreatePersonalBoardModal extends Component {
         const email = reactLocalStorage.get('email', true);
         const response = await createNewTeamBoard(this.state.name, this.state.selectedMembers, email);
         message.success("New board created successfully.")
+        console.log(response);
         this.props.toggleSelectedTeamBoard(true, response.data)
         this.props.toggleCreateTeamBoardModalVisibility(false)
     }

@@ -72,7 +72,7 @@ export default class PersonalBoard extends Component {
                         <Col lg={6}>
                         </Col>
                         <Col lg={11}>
-                            <h1  className="board-name"> Welcome to {this.props.boardItem.name} board.</h1>
+                            <h1  className="board-name"> Welcome to {this.props.boardItem.name} board</h1>
                         </Col>
                         <Col lg={6}>
                             <Button  type="primary" className="add-new-list-btn float-right"
