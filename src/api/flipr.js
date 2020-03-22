@@ -43,7 +43,6 @@ export const deletePersonalBoard = async (id) => {
         }
     })
 
-    console.log(response)
     return response;
 }
 
@@ -163,3 +162,34 @@ export const getAttachments = async (id) => {
 
     return response;
 }
+
+export const downloadAttachments = async (item) => {
+    const response = await flipr.get('downloadAttachment/', {
+        params: {
+            id: item.id,
+            name: item.name
+        },
+        responseType: 'blob'
+    });
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', item.name);
+    document.body.appendChild(link);
+    link.click();
+}
+
+// export const downloadFile = async (filename) => {
+//     const response = await spyder.get('send/download-invalid-excel/', {
+//           params: {
+//                 filename: filename
+//           },
+//           responseType: 'blob'
+//     });
+//     const url = window.URL.createObjectURL(new Blob([response.data]));
+//     const link = document.createElement('a');
+//     link.href = url;
+//     link.setAttribute('download', filename);
+//     document.body.appendChild(link);
+//     link.click();
+// }

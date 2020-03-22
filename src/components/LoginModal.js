@@ -74,7 +74,7 @@ export default class LoginModal extends Component {
               <b>Password:</b>{" "}
             </Col>
             <Col lg={10}>
-              <Input onChange = {this.handlePasswordChange }/>
+              <Input.Password onChange = {this.handlePasswordChange }/>
             </Col>
           </Row>
         </Modal>

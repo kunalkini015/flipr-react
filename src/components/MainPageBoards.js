@@ -47,7 +47,6 @@ export default class MainPageBoards extends Component {
   }
 
   handleCreateTeamBoardClick = () => {
-    console.log("Team board create click")
     this.setState({createTeamBoardModalVisible: true})
   }
 
@@ -67,7 +66,6 @@ export default class MainPageBoards extends Component {
   };
 
   handleTeamBoardDelete = async (item) => {
-    console.log(item);
     const email = reactLocalStorage.get('email', true);
     await deleteTeamBoard(item.id, email);
     const response = await getTeamBoards(email);
@@ -75,7 +73,6 @@ export default class MainPageBoards extends Component {
   }
 
   handlePersonalBoardDelete = async (item) => {
-    console.log(item);
     await deletePersonalBoard(item.id)
     const email = reactLocalStorage.get('email', true);   
     const response = await getPersonalBoards(email);
@@ -157,7 +154,6 @@ export default class MainPageBoards extends Component {
       // Team Board 
        
       const teamResponse = await getTeamBoards(email);
-      console.log(teamResponse.data);
       this.setState({teamBoards: teamResponse.data});
   }
 

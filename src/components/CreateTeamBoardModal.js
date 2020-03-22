@@ -18,12 +18,10 @@ export default class CreatePersonalBoardModal extends Component {
 
 
     handleOk = async () => {
-        console.log(this.state.selectedMembers)
-        console.log(this.state.name);
+
         const email = reactLocalStorage.get('email', true);
         const response = await createNewTeamBoard(this.state.name, this.state.selectedMembers, email);
-        message.success("New board created successfully.")
-        console.log(response);
+        message.info("We have prepopulated your board with following lists. Feel free to delete or add new lists", 10)
         this.props.toggleSelectedTeamBoard(true, response.data)
         this.props.toggleCreateTeamBoardModalVisibility(false)
     }
@@ -38,7 +36,6 @@ export default class CreatePersonalBoardModal extends Component {
 
 
     handleChange = (value) => {
-        console.log("Selected", value);
         this.setState({
             children: [],
             selectedMembers:  value
@@ -46,11 +43,9 @@ export default class CreatePersonalBoardModal extends Component {
     }
 
     handleSearch = (value) => {
-        console.log("In handle Search");
 
         const children = this.state.children;
         children.push(value);
-        console.log(children)
         this.setState({children})
     }
 

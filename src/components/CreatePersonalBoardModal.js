@@ -16,7 +16,7 @@ export default class CreatePersonalBoardModal extends Component {
     handleOk = async () => {
         const email = reactLocalStorage.get('email', true);
         const response = await createNewPersonalBoard(this.state.name, email);
-        message.success("New board created successfully.")
+        message.info("We have prepopulated your board with following three lists. Feel free to delete or add new lists", 10)
         this.props.toggleSelecedPersonalBoard(true, response.data)
         this.props.toggleCreateModalVisibility(false)
     }

@@ -98,9 +98,8 @@ export default class RegistrationModal extends Component {
               <b>Password:</b>{" "}
             </Col>
             <Col lg={10}>
-              <Input
+              <Input.Password
                 placeholder="Enter password"
-                type="password"
                 onChange={this.handlePasswordChange}
               />
             </Col>
@@ -110,9 +109,8 @@ export default class RegistrationModal extends Component {
               <b>Confirm:</b>{" "}
             </Col>
             <Col lg={10}>
-              <Input
+              <Input.Password
                 placeholder="Enter password again"
-                type="password"
                 onChange={this.handleConfirmPasswordChange}
               />
             </Col>

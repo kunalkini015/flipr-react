@@ -255,6 +255,17 @@ body {
   word-wrap: break-word;
 }
 
+/* AddAttachmentModal */
+.attachment{
+    margin-right: 1vw;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+.attachment-container{
+  overflow: auto;
+  max-height: 40vh;
+}
+
 @media all and (max-width: 480px) {
         /* Home 480px*/
         .home-page-container {
