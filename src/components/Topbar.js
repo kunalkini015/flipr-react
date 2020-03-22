@@ -17,7 +17,7 @@ export default class Topbar extends Component {
                 <Row>
 
                     <Col lg={12}>
-                        <h1 className="header-logo"> Task Handler </h1>
+                        <h1 className="header-logo"> TASK HANDLER </h1>
                     </Col>
                     <Col lg={12}>
                         <Button className="float-right logout-btn" onClick={this.handleLogout}> Logout </Button>

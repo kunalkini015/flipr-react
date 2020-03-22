@@ -40,28 +40,46 @@ export default class Home extends Component {
     return (
       <div className="home-page-container">
         <Row className="home-page-row">
-          <Col span={12}>
+          <Col lg={24}>
+                <h1 className="home-page-logo"> TASK HANDLER  </h1>
+          </Col>
+        </Row>
+        <Row className="home-page-row">
+          <Col lg={24}>
+            <p class="home-page-instruction"> Introducing task handler to make your life easier.
+                Manage your personal or professional, individual or team tasks on the go with Task handler.
+                Task Handler has been designed especially to make your life easy and beautiful.
+                Don't worry we have lot more things other than keeping track your activities. Register now to enjoy the perks.
+              </p>
+
+          </Col>
+
+        </Row>
+        
+
+        <Row className="home-page-row">
+          <Col lg={12} xs={12}>
             <Button
               type="primary"
-              className="home-page-btn"
+              className="home-page-btn home-page-login-btn"
               onClick={this.handleLogInClick}
             >
               LOG IN
             </Button>
           </Col>
-          <Col span={12}>
+          <Col lg={12} xs={12}>
             <Button 
                 type="primary" 
-                className="home-page-btn"
+                className="home-page-btn home-page-reg-btn"
                 onClick={this.handleRegistrationClick}>
               REGISTER
             </Button>
           </Col>
         </Row>
         <Row className="home-page-row">
-          <Col span={24}>
+          <Col lg={15} xs={17}>
             <p 
-                className="forgot-password-text"
+                className="forgot-password-text float-right"
                 onClick={this.handleForgotPasswordClick}> Forgot Password </p>
           </Col>
         </Row>

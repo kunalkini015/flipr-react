@@ -166,7 +166,7 @@ export default class MainPageBoards extends Component {
       <div className="main-container">
         {this.state.selectedBoardItem === undefined ? (
           <Row>
-            <Col lg={12}>
+            <Col lg={12} style={{textAlign: "center"}} >
               <h1 className="board-heading"> Personal Boards </h1>
               <div>
                 <Row>
@@ -190,7 +190,7 @@ export default class MainPageBoards extends Component {
               </div>
             </Col>
             <Col lg={1} className="vertical-line"></Col>
-            <Col lg={11}>
+            <Col lg={11} style={{textAlign: "center"}}>
               <h1 className="board-heading"> Team Boards </h1>
               <div>
                 <Row>

@@ -9,13 +9,13 @@ export default class Bottombar extends Component {
 
             <Row>
                 <Col lg={8}>
-                    <b> <h1 className="footer-logo"> TH </h1> </b>
+                    <b> <h1 className="footer-logo"> TASK HANDLER </h1> </b>
                 </Col>
                 <Col lg={8}>
-                    <p className="footer-middle-text text-center"> Handling task made easy. </p>
+                    <p className="footer-middle-text text-center"> Handling tasks made easy. </p>
                 </Col>
                 <Col lg={8}>
-                    <p className="float-right footer-right-text"> copyright &copy; {new Date().getFullYear()}  </p>
+                    <p className="float-right footer-right-text"> Copyright &copy; {new Date().getFullYear()}  </p>
                 </Col>
             </Row>
             </Footer>
