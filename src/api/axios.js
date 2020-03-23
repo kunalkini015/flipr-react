@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const flipr = axios.create({
-    // baseURL: 'https://flipr-django.herokuapp.com/', 
-    baseURL: 'http://localhost:8000/', 
+    baseURL: 'https://flipr-django.herokuapp.com/', 
+    // baseURL: 'http://localhost:8000/', 
     headers: {
           'Content-Type': 'application/json'
     }

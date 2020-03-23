@@ -98,10 +98,11 @@ export const getAllLists = async (id, personal=true) => {
     return response
 }
 
-export const createNewList = async (name, boardId) => {
+export const createNewList = async (name, boardId ,personal) => {
     const response = await flipr.post('lists/',{
         name: name,
-        boardId: boardId
+        boardId: boardId,
+        personal
     })
 
     return response;

@@ -86,6 +86,7 @@ export default class PersonalBoard extends Component {
                                 visible={this.state.isCreateNewListModalVisible}
                                 toggleNewListModalVisiblity={this.toggleNewListModalVisiblity}
                                 board={this.props.boardItem}
+                                personal={true}
                                 /> 
                             }
                         </Col>

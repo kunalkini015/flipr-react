@@ -15,7 +15,7 @@ export default class CreatePersonalBoardModal extends Component {
       if(this.state.name === undefined)
         message.error("Please enter a name to continue");
       else{
-        const response = await createNewList(this.state.name, this.props.board.id);
+        const response = await createNewList(this.state.name, this.props.board.id, this.props.personal);
         message.success("New list created successfully");
         this.props.toggleNewListModalVisiblity(false)
       }
