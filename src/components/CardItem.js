@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, Button, Row, Col} from 'antd';
+import {Card, Button, Row, Col, Tooltip} from 'antd';
 import {deleteCard, getCardsPerList, updateCard } from './../api/flipr';
 import { DeleteOutlined, EditOutlined, FileAddOutlined } from '@ant-design/icons';
 import CardDetailsModal from './CardDetailsModal';
@@ -81,9 +81,15 @@ export default class CardItem extends Component {
                             <h4> {this.props.item.name} </h4>
                         </Col>     
                         <Col lg={12}>
-                            <DeleteOutlined className="float-right" onClick={this.handleCardDelete}/>
-                            <EditOutlined className="float-right card-edit-btn" onClick={this.handleCardClick}/>
-                            <FileAddOutlined className="float-right card-attach-btn"  onClick={this.handleAttachmentClick}/>
+                            <Tooltip title="Delete card">
+                                    <DeleteOutlined className="float-right" onClick={this.handleCardDelete}/>
+                            </Tooltip>
+                            <Tooltip title="Edit card">
+                                <EditOutlined className="float-right card-edit-btn" onClick={this.handleCardClick}/>
+                            </Tooltip>
+                            <Tooltip title="Add attachments">
+                                <FileAddOutlined className="float-right card-attach-btn"  onClick={this.handleAttachmentClick}/>
+                            </Tooltip>
                         </Col>           
                     </Row>
                     {

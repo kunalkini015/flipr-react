@@ -16,7 +16,14 @@ export default class CreatePersonalBoardModal extends Component {
 
 
     handleOk = async () => {
-        const response = await createNewCard(this.props.currentList.id, 
+        if(this.state.name === undefined)
+          message.error("Please provide a name to the card")
+        else if(this.state.date === undefined)
+          message.error("Please select a date to continue")
+        else if(this.state.time === undefined)
+          message.error("Please select a due time to continue")
+        else{
+          const response = await createNewCard(this.props.currentList.id, 
             this.state.name,
             this.state.description,
             this.state.checked,
@@ -27,6 +34,8 @@ export default class CreatePersonalBoardModal extends Component {
             message.success("New card created successfully.")
 
         this.props.toggleCreateCardModalVisiblity(false)
+        }
+        
     }
 
     handleCancel = () => {
@@ -57,7 +66,7 @@ export default class CreatePersonalBoardModal extends Component {
     render() {
         return (
             <Modal
-          title="Create New List"
+          title="Add task"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -65,7 +74,7 @@ export default class CreatePersonalBoardModal extends Component {
           <Row className="row-top-margin">
             <Col lg={8}>
               {" "}
-              <b>Enter new Card name:</b>
+              <b>Card name:</b>
             </Col>
             <Col lg={10}>
               <Input onChange = { this.handleCardNameChange }/>

@@ -23,8 +23,11 @@ export default class RegistrationModal extends Component {
       message.error("Please enter a valid email")
     else if (this.state.password === undefined)
       message.error("Please enter a password to continue");
+    else if (this.state.password.length < 8)
+      message.error("Password must be at least 8 characters long")
     else if (this.state.confirmPassword === undefined)
       message.error("Please confirm password to continue");
+    
     else if (this.state.password !== this.state.confirmPassword)
       message.error("Password doesn't match");
     else {

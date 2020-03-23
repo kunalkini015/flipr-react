@@ -321,7 +321,7 @@ body {
 
         .header-logo {
             color: #132ecc;
-            font-size: 20px;
+            font-size: 15px;
             float: left;
             font-family: "Montserrat", sans-serif;
             font-weight: bolder;
@@ -343,6 +343,7 @@ body {
 
         .footer-logo {
             color: #132ecc;
+            font-size: 15px;
             font-family: "Montserrat", sans-serif;
             font-weight: bolder;
             transform: rotate(-5deg);

@@ -46,7 +46,7 @@ export default class Home extends Component {
         </Row>
         <Row className="home-page-row">
           <Col lg={24}>
-            <p class="home-page-instruction"> Introducing task handler to make your life easier.
+            <p className="home-page-instruction"> Introducing task handler to make your life easier.
                 Manage your personal or professional, individual or team tasks on the go with Task handler.
                 Task Handler has been designed especially to make your life easy and beautiful.
                 Don't worry we have lot more things other than keeping track your activities. Register now to enjoy the perks.

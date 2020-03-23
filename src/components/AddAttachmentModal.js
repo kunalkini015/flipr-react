@@ -57,8 +57,8 @@ export default class AddAttachmentModal extends Component {
     render() {
         const props = {
             name: 'file',
-            // action: 'http://localhost:8000/attachment/',
-            action: 'https://flipr-django.herokuapp.com/attachment/',
+            action: 'http://localhost:8000/attachment/',
+            // action: 'https://flipr-django.herokuapp.com/attachment/',
             headers: {
               authorization: 'authorization-text',
             },
@@ -79,7 +79,7 @@ export default class AddAttachmentModal extends Component {
           };
         return (
                 <Modal
-                    title="Create New List"
+                    title="Attachment"
                     visible={this.props.visible}
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}

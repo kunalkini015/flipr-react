@@ -87,10 +87,10 @@ export default class List extends Component {
                 >
                     <Row>
                         <Col lg={14} xs={13}>
-                            <Button className="create-new-card-btn" icon = {<PlusOutlined />} onClick={this.handleCreateNewCardClick}>Add new card  </Button>
+                            <Button className="create-new-card-btn" icon = {<PlusOutlined />} onClick={this.handleCreateNewCardClick}> New Card  </Button>
                         </Col>
                         <Col lg={10} xs={11}>
-                            <Checkbox checked={this.state.showArchieved} onClick={this.handleArchiveClick}> Show Archieved</Checkbox>
+                            <Checkbox checked={this.state.showArchieved} onClick={this.handleArchiveClick}> Show Archived</Checkbox>
                         </Col>
                     </Row>
                 {

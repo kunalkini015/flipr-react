@@ -18,12 +18,15 @@ export default class CreatePersonalBoardModal extends Component {
 
 
     handleOk = async () => {
-
+        if(this.state.name === undefined)
+        message.error("Please enter a name to continue");
+      else{
         const email = reactLocalStorage.get('email', true);
         const response = await createNewTeamBoard(this.state.name, this.state.selectedMembers, email);
-        message.info("We have prepopulated your board with following lists. Feel free to delete or add new lists", 10)
+        message.info("Success! We have added 3 lists for you! Feel free to add or delete!", 10)
         this.props.toggleSelectedTeamBoard(true, response.data)
         this.props.toggleCreateTeamBoardModalVisibility(false)
+      }
     }
 
     handleCancel = () => {
@@ -60,7 +63,7 @@ export default class CreatePersonalBoardModal extends Component {
     render() {
         return (
             <Modal
-          title="LOG IN"
+          title="Create board"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -68,14 +71,14 @@ export default class CreatePersonalBoardModal extends Component {
           <Row>
             <Col lg={6}>
               {" "}
-              <b>Enter board name:</b>
+              <b>Board name:</b>
             </Col>
             <Col lg={10}>
               <Input onChange = {this.handleBoardNameChange }/>
             </Col>
           </Row>
 
-          <Row>
+          <Row className="row-top-margin">
           <Col lg={6}>
               <b>Add members:</b>
             </Col>
@@ -83,7 +86,7 @@ export default class CreatePersonalBoardModal extends Component {
             <Select
                 mode="multiple"
                 style={{ width: '100%' }}
-                placeholder="Please select"
+                placeholder="Add members"
                 onChange={this.handleChange}
                 onSearch={this.handleSearch}
             >

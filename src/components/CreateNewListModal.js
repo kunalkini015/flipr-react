@@ -12,9 +12,14 @@ export default class CreatePersonalBoardModal extends Component {
 
 
     handleOk = async () => {
+      if(this.state.name === undefined)
+        message.error("Please enter a name to continue");
+      else{
         const response = await createNewList(this.state.name, this.props.board.id);
         message.success("New list created successfully");
         this.props.toggleNewListModalVisiblity(false)
+      }
+        
     }
 
     handleCancel = () => {
@@ -27,7 +32,7 @@ export default class CreatePersonalBoardModal extends Component {
     render() {
         return (
             <Modal
-          title="Create New List"
+          title="Create List"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -35,7 +40,7 @@ export default class CreatePersonalBoardModal extends Component {
           <Row>
             <Col lg={6}>
               {" "}
-              <b>Enter new list name:</b>
+              <b>List name:</b>
             </Col>
             <Col lg={10}>
               <Input onChange = { this.handleListNameChange }/>

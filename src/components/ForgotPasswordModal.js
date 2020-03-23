@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Input, Modal, message } from "antd";
+import { forgotPassword } from "../api/flipr";
 
 export default class ForgotPasswordModal extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class ForgotPasswordModal extends Component {
     };
   }
 
-  handleOk = () => {
+  handleOk = async () => {
 
     if (this.state.email === undefined)
       message.error("Please enter an email to continue");
@@ -22,7 +23,10 @@ export default class ForgotPasswordModal extends Component {
       message.error("Please confirm password to continue");
     else if (this.state.password !== this.state.confirmPassword)
       message.error("Password doesn't match");
-    else this.props.toggleForgotPasswordModalVisiblity(false);
+    else {
+      await forgotPassword(this.state.email, this.state.password);
+      this.props.toggleForgotPasswordModalVisiblity(false);
+    }
   };
 
   handleCancel = () => {

@@ -18,6 +18,16 @@ export const login = async (email, password) => {
     return response
 }
 
+
+export const forgotPassword = async (email, password) => {
+    const response = await flipr.post('/rest-auth/password/reset/', {
+        email: email
+    })
+    console.log(response);
+
+    return response;
+}
+
 export const getPersonalBoards = async (email) => {
     const response = await flipr.get('personal_boards/',{
         params: {

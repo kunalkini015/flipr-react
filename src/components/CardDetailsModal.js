@@ -64,7 +64,7 @@ export default class CreatePersonalBoardModal extends Component {
         
         return (
             <Modal
-          title="Create New List"
+          title="Task details"
           visible={this.props.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}

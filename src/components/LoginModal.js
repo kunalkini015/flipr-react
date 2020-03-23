@@ -23,7 +23,7 @@ export default class LoginModal extends Component {
           
           try {
             const response = await login(this.state.email, this.state.password);
-            message.success("Login successfull");
+            message.success("Login successful");
             this.props.setUserEmail(this.state.email)
             reactLocalStorage.set('email', this.state.email);
             history.replace("/main/");

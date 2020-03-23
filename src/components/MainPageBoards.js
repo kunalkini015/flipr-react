@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Tooltip } from "antd";
 import PersonalBoard from "../containers/PersonalBoard";
 import TeamBoard from "../containers/TeamBoard";
 import CreatePersonalBoardModal from "./CreatePersonalBoardModal";
@@ -95,8 +95,12 @@ export default class MainPageBoards extends Component {
               <h3> {item.name} </h3>
           </Col>
           <Col lg={12} className="float-right">
-              <DeleteOutlined className="float-right" onClick={() => this.handlePersonalBoardDelete(item)}/>
-              <EditOutlined className="float-right card-edit-btn" onClick={() => this.handlePersonalBoardClick(item)}/>
+              <Tooltip title="Delete board">
+                  <DeleteOutlined className="float-right" onClick={() => this.handlePersonalBoardDelete(item)}/>
+              </Tooltip>
+              <Tooltip title="Edit board">
+                  <EditOutlined className="float-right card-edit-btn" onClick={() => this.handlePersonalBoardClick(item)}/>
+              </Tooltip>
           </Col>
         </Row>
         
