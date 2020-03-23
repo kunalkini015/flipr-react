@@ -87,10 +87,11 @@ export const deleteTeamBoard = async (id, email) => {
     return response;
 }
 
-export const getAllLists = async (id) => {
+export const getAllLists = async (id, personal=true) => {
     const response = await flipr.get('lists/', {
         params: {
-            id: id
+            id: id,
+            personal
         }
     })
 
@@ -152,6 +153,16 @@ export const updateCard = async (id, archived=false, requestObj) => {
         archived,
         ...requestObj
     })
+    return response
+}
+
+export const  moveCard = async (cardId, listId) => {
+    const response = await flipr.post('moveCard/', {
+        cardId: cardId,
+        listId: listId
+    })
+
+    console.log(response.data);
     return response
 }
 

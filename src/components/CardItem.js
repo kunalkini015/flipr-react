@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import {Card, Button, Row, Col, Tooltip} from 'antd';
+import {Card, Button, Row, Col, Tooltip, Menu, Dropdown} from 'antd';
 import {deleteCard, getCardsPerList, updateCard } from './../api/flipr';
-import { DeleteOutlined, EditOutlined, FileAddOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, FileAddOutlined, MoreOutlined } from '@ant-design/icons';
 import CardDetailsModal from './CardDetailsModal';
 import AddAttachmentModal from './AddAttachmentModal';
+import MoveCardModal from './MoveCardModal';
 export default class CardItem extends Component {
     constructor(props){
         super(props);
         this.state = {
             cards: undefined,
             isCardDetailModalVisible: false,
-            isAttachmentModalVisible: false
+            isAttachmentModalVisible: false,
+            isMoveModalVisible: false
             
         }
     }
@@ -64,11 +66,30 @@ export default class CardItem extends Component {
     handleCardClick = () => {
         this.setState({ isCardDetailModalVisible: true})
     }
-
     toggleCardVisibility = (value) => {
         this.setState({ isCardDetailModalVisible: false})
     }
+    handleMoveClick = () => {
+        this.setState({isMoveModalVisible: true})
+    }
+
+    toggleMoveVisibility = (value) => {
+        this.setState({isMoveModalVisible: value})
+        this.props.toggleReload(true)
+    }
+
+    componentDidMount = () => {
+        console.log("In card Item", this.props.board)
+    }
     render() {
+        const menu = (
+            <Menu>
+              <Menu.Item key="0" onClick={this.handleMoveClick}>
+                     Move
+              </Menu.Item>
+              
+            </Menu>
+          );
         return (
             <div>
                 <Card className="card" draggable={true}
@@ -89,6 +110,11 @@ export default class CardItem extends Component {
                             </Tooltip>
                             <Tooltip title="Add attachments">
                                 <FileAddOutlined className="float-right card-attach-btn"  onClick={this.handleAttachmentClick}/>
+                            </Tooltip>
+                            <Tooltip title="More">
+                            <Dropdown overlay={menu} trigger={['click']}>
+                                <MoreOutlined className="float-right card-more-btn"/>
+                            </Dropdown>
                             </Tooltip>
                         </Col>           
                     </Row>
@@ -131,6 +157,15 @@ export default class CardItem extends Component {
                         item={this.props.item}
                         toggleUpdate={this.props.toggleUpdate}
                         />
+                }
+                {
+                    this.state.isMoveModalVisible && 
+                    <MoveCardModal item={this.props.item} 
+                                board={this.props.board} 
+                                visible={this.state.isMoveModalVisible}
+                                toggleMoveVisibility = {this.toggleMoveVisibility}
+                                personal={this.props.personal}
+                                />
                 }
         </div>
         )

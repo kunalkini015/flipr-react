@@ -251,6 +251,10 @@ body {
 .card-attach-btn {
   margin-right: 1vw;
 }
+.card-more-btn{
+  margin-right: 1vw;
+}
+
 .card-name-in-list {
   word-wrap: break-word;
 }

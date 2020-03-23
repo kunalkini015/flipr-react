@@ -22,6 +22,7 @@ export default class List extends Component {
     }
 
     componentDidMount = async () => {
+        console.log(this.props.board)
         const response = await getCardsPerList(this.props.item.id);
         this.setState({cards: response.data});
     }
@@ -38,6 +39,10 @@ export default class List extends Component {
                             setCards = {this.setCards}
                             listId = {this.props.item.id}
                             toggleUpdate = {this.toggleUpdate}
+                            board={this.props.board}
+                            toggleReload = {this.props.toggleReload}
+                            personal={this.props.personal}
+
                     />
                 }
                 else{
@@ -46,6 +51,9 @@ export default class List extends Component {
                             setCards = {this.setCards}
                             listId = {this.props.item.id}
                             toggleUpdate = {this.toggleUpdate}
+                            board={this.props.board}
+                            toggleReload = {this.props.toggleReload}
+                            personal={this.props.personal}
                     />
                 }
 

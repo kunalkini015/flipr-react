@@ -19,13 +19,13 @@ export default class PersonalBoard extends Component {
         }
     }
     componentDidMount = async () => {
-
-        const response = await getAllLists(this.props.boardItem.id);
+        console.log("In personal board", this.props.boardItem)
+        const response = await getAllLists(this.props.boardItem.id, true);
         this.setState({lists: response.data});
     }
 
     toggleReload = async (value) => {
-        const response = await getAllLists(this.props.boardItem.id);
+        const response = await getAllLists(this.props.boardItem.id, true);
         this.setState({lists: response.data, shouldReload: value});
     }
 
@@ -35,6 +35,8 @@ export default class PersonalBoard extends Component {
                 return(
                     <List item={item}
                     toggleReload={this.toggleReload}
+                    board={this.props.boardItem}
+                    personal={true}
                     />
                 )
             })
@@ -43,7 +45,7 @@ export default class PersonalBoard extends Component {
 
     toggleNewListModalVisiblity = async (value) => {
         this.setState({isCreateNewListModalVisible: value})
-        const response = await getAllLists(this.props.boardItem.id);
+        const response = await getAllLists(this.props.boardItem.id, true);
         this.setState({lists: response.data});
     }
     handleNewListClick = () => {
